@@ -1,25 +1,36 @@
+// Importa função para encerrar o programa
 import kotlin.system.exitProcess
+// Constantes para identificar operações
 val Deposito = "Deposito"
 val Saque = "Saque"
+// Variável global para armazenar o nome do usuário
 var nome: String = "Usuário"
+// Classe de dados para representar um extrato bancário
 data class Extrato(
-  var status: String,
-    var valor: Float
+  var status: String, // Tipo de operação (Depósito, Saque, etc)
+  var valor: Float    // Valor da operação
 )
+// Senha fixa para autenticação
 val senha = 3589
-
+// Lista mutável para armazenar extratos
 var extratos = mutableListOf<Extrato>(Extrato(Deposito, 1.0f), Extrato(Saque, 1.0f) )
+// Saldo inicial da conta
 var saldo = 100.5 // Float
 
+// Função principal do programa Kotlin. Todo programa começa por aqui.
 fun main() {
+    // Solicita o nome do usuário
     println("Qual o seu nome?")
     nome = readln()
+    // Exibe mensagem de boas-vindas
     println("Olá $nome é um prazer ter você por aqui!")
+    // Chama o menu inicial
     inicio(nome)
 }
 
+// Função que exibe o menu principal e trata a escolha do usuário
 fun inicio(name:String = "Usuário") {
-println("Escolha uma das opções abaixo, $name:" +
+    println("Escolha uma das opções abaixo, $name:" +
         "\n1 - Ver saldo" +
         "\n2 - Ver o extrato" +
         "\n3 - Fazer saque" +
@@ -28,6 +39,7 @@ println("Escolha uma das opções abaixo, $name:" +
         "\n6 - Sair" )
     val escolha = readLine()?.toIntOrNull()
 
+    // Estrutura condicional para tratar a escolha
     when (escolha) {
         1 -> {chamarSenha(); verSaldo()}
         2 -> {chamarSenha(); verExtrato()}
@@ -42,6 +54,8 @@ println("Escolha uma das opções abaixo, $name:" +
         else -> erro()
     }
 }
+
+// Função para solicitar a senha do usuário
 fun chamarSenha() {
     print("Por favor, informe a senha: ")
     val senhaInformada = readLine()?.toIntOrNull()
@@ -50,17 +64,20 @@ fun chamarSenha() {
         println("Por favor, informe um número válido.")
         chamarSenha()
     } else if (senhaInformada == senha) {
-        return
+        return // Senha correta, segue o fluxo
     } else {
         println("Senha incorreta. Tente novamente.")
         chamarSenha()
     }
 }
+
+// Função para exibir o saldo atual
 fun verSaldo() {
     println("Seu saldo atual é: $saldo")
     inicio()
 }
 
+// Função para realizar depósito
 fun fazerDeposito() {
     print("Qual o valor para depósito? ")
     val deposito = readLine()?.toFloatOrNull()
@@ -71,14 +88,14 @@ fun fazerDeposito() {
     } else if (deposito <= 0) {
         println("Operação não autorizada")
         fazerDeposito()
-    }  else
-     {
-        saldo += deposito
-        extratos.addLast(Extrato(Deposito, deposito) )
+    }  else {
+        saldo += deposito // Atualiza saldo
+        extratos.addLast(Extrato(Deposito, deposito) ) // Adiciona ao extrato
         verSaldo()
     }
 }
 
+// Função para realizar saque
 fun fazerSaque() {
     print("Qual o valor para saque? ")
     val saque = readLine()?.toFloatOrNull()
@@ -87,8 +104,8 @@ fun fazerSaque() {
         println("Por favor, informe um número válido.")
         fazerSaque()
     } else if( saque > 0 && saque <= saldo) {
-        saldo -= saque
-        extratos.addLast(Extrato(Saque,saque) )
+        saldo -= saque // Atualiza saldo
+        extratos.addLast(Extrato(Saque,saque) ) // Adiciona ao extrato
         verSaldo()
     }else{
         println("Operação não autorizada")
@@ -96,11 +113,13 @@ fun fazerSaque() {
     }
 }
 
+// Função para exibir mensagem de erro de opção
 fun erro() {
     println("Por favor, informe um número entre 1 e 6.")
     inicio()
 }
 
+// Função para sair do sistema
 fun sair() {
     print("Você deseja sair? (S/N) ")
     val confirma = readLine()?.uppercase()
@@ -113,6 +132,7 @@ fun sair() {
 
         inicio()
     }
+// Função para exibir o extrato de operações
 fun verExtrato() {
     println("Extrato:")
     extratos.forEach { extrato ->
@@ -120,13 +140,15 @@ fun verExtrato() {
             println("${extrato.status}      | + R$ ${extrato.valor}")
         } else if( extrato.status == Saque){
             println("${extrato.status}         | - R$ ${extrato.valor}")
-    }else {
+        }else {
             println("${extrato.status} | - R$ ${extrato.valor}")
         }
     }
 }
+
+// Função para realizar transferência
 fun fazerTransferencia() {
-println("Qual o número da conta para transferência? ")
+    println("Qual o número da conta para transferência? ")
     var numeroConta = readLine()?.toIntOrNull()
     while(numeroConta == null || numeroConta <= 0) {
         println("Por favor, informe um número de conta válido.")
@@ -139,8 +161,8 @@ println("Qual o número da conta para transferência? ")
         println("Por favor, informe um número válido.")
         fazerTransferencia()
     } else if( transferencia > 0 && transferencia <= saldo) {
-        saldo -= transferencia
-        extratos.addLast(Extrato("Transferência", transferencia) )
+        saldo -= transferencia // Atualiza saldo
+        extratos.addLast(Extrato("Transferência", transferencia) ) // Adiciona ao extrato
         verSaldo()
     }else{
         println("Operação não autorizada")

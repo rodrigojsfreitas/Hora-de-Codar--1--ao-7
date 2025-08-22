@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/Hora de Codar/Hora de Codar - codigo 2/Main.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/Hora de Codar/Hora de Codar - codigo 2/Main.kt" />
+              <option name="originalContent" value="/*&#10;Elementos usados neste arquivo Kotlin:&#10;&#10;fun main():&#10;    - fun: palavra-chave que define uma função.&#10;    - main: nome da função principal, ponto de entrada do programa.&#10;    - (): indica que a função não recebe parâmetros.&#10;&#10;println(&quot;Escreva seu nome&quot;):&#10;    - println: função que exibe uma mensagem no console e pula para a próxima linha.&#10;    - &quot;Escreva seu nome&quot;: texto (String) que será exibido ao usuário.&#10;&#10;val n = readln():&#10;    - val: declara uma variável imutável (não pode ser alterada depois).&#10;    - n: nome da variável.&#10;    - =: operador de atribuição, define o valor inicial da variável.&#10;    - readln(): função que lê uma linha digitada pelo usuário no console.&#10;&#10;print(&quot;Olá, $n&quot;):&#10;    - print: função que exibe uma mensagem no console (sem pular linha).&#10;    - &quot;Olá, $n&quot;: texto (String) que será exibido ao usuário, usando interpolação de string para mostrar o valor da variável n.&#10;    - $n: interpolação de string, insere o valor da variável n dentro do texto.&#10;*/&#10;&#10;// Função principal do programa Kotlin. Todo programa começa por aqui.&#10;fun main() {&#10;    // Exibe uma mensagem solicitando ao usuário que escreva seu nome&#10;    println(&quot;Escreva seu nome&quot;)&#10;    // Lê a entrada do usuário e armazena na variável 'n'&#10;    val n = readln()&#10;    // Exibe uma saudação personalizada usando o nome informado&#10;    print(&quot;Olá, $n&quot;)&#10;}" />
+              <option name="updatedContent" value="/*&#10;Elementos usados neste arquivo Kotlin:&#10;&#10;fun main():&#10;    - fun: palavra-chave que define uma função.&#10;    - main: nome da função principal, ponto de entrada do programa.&#10;    - (): indica que a função não recebe parâmetros.&#10;&#10;println(&quot;Escreva seu nome&quot;):&#10;    - println: função que exibe uma mensagem no console e pula para a próxima linha.&#10;    - &quot;Escreva seu nome&quot;: texto (String) que será exibido ao usuário.&#10;&#10;val n = readln():&#10;    - val: declara uma variável imutável (não pode ser alterada depois).&#10;    - n: nome da variável.&#10;    - =: operador de atribuição, define o valor inicial da variável.&#10;    - readln(): função que lê uma linha digitada pelo usuário no console.&#10;&#10;print(&quot;Olá, $n&quot;):&#10;    - print: função que exibe uma mensagem no console (sem pular linha).&#10;    - &quot;Olá, $n&quot;: texto (String) que será exibido ao usuário, usando interpolação de string para mostrar o valor da variável n.&#10;    - $n: interpolação de string, insere o valor da variável n dentro do texto.&#10;*/&#10;&#10;// Função principal do programa Kotlin. Todo programa começa por aqui.&#10;fun main() {&#10;    // Exibe uma mensagem solicitando ao usuário que escreva seu nome&#10;    println(&quot;Escreva seu nome&quot;)&#10;    // Lê a entrada do usuário e armazena na variável 'n'&#10;    val n = readln()&#10;    // Exibe uma saudação personalizada usando o nome informado&#10;    print(&quot;Olá, $n&quot;)&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Hora de codar 2 - codigo 7/Main.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/Hora de codar 2 - codigo 7/Main.kt" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

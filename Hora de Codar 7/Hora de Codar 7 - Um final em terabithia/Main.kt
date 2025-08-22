@@ -1,22 +1,27 @@
 // Hotel Nakatomi Plaza
-val hot = "Nakatomi Plaza"
-var n : String = ""
-var qua = mutableListOf<Int>()
-var res = 0
-var init = 0
-var hosp = mutableListOf<String>()
+// Declaração de variáveis globais
+val hotel = "Nakatomi Plaza" // Nome do hotel
+var nome : String = "" // Nome do usuário
+var quartos = mutableListOf<Int>() // Lista de quartos disponíveis
+var reserva = 0 // Quarto reservado
+var init = 0 // Controle de inicialização
+var hospedes = mutableListOf<String>() // Lista de hóspedes
+
+// Função principal do programa Kotlin. Todo programa começa por aqui.
 fun main() {
+    // Inicializa a lista de quartos e faz login do usuário
     if (init < 1){
-            init++
+        init++
         for (x in 1 ..20){
-            qua.add(x)
+            quartos.add(x)
         }
-        println("Bem vindo ao $hot")
+        println("Bem vindo ao $hotel")
         println("Qual é o seu nome de usuário?")
-        n = readln()
-        while(n == "")
+        nome = readln()
+        while(nome == ""){
             println("Escreva um nome por favor:")
-            n = readln()
+            nome = readln()
+        }
         println("Qual é sua senha?")
         var s = readln()
         while(s != "2678"){
@@ -24,14 +29,17 @@ fun main() {
             print("Escreva sua senha novamente: ")
             s = readln()
         }
-        println("Bem vindo ao Hotel $hot, $n. É um imenso prazer ter você aqui!")
+        println("Bem vindo ao Hotel $hotel, $nome. É um imenso prazer ter você aqui!")
     }
     menu()
 }
 
+// Função para sair do sistema
 fun sair(){
-    println("Muito obrigado e até logo, $n")
+    println("Muito obrigado e até logo, $nome")
 }
+
+// Função que exibe o menu principal e trata a escolha do usuário
 fun menu(){
     println("1.      Diária       ")
     println("2.    Hospedagem     ")
@@ -40,6 +48,7 @@ fun menu(){
     println("5.  Ar-condicionado  ")
     println("6.        Sair       ")
     var resp = readlnOrNull()
+    // Estrutura condicional para tratar a escolha
     when (resp){
         "1" -> diaria()
         "2" -> menu2()
@@ -48,11 +57,10 @@ fun menu(){
         "5" -> air()
         "6" -> sair()
         else -> erro()
-
     }
-
 }
 
+// Função para menu de hospedagem
 fun menu2(){
     println("1.   Cadastrar   ")
     println("2.   Pesquisar   ")
@@ -70,98 +78,103 @@ fun menu2(){
     }
 }
 
+// Função para tratar erro no menu2
 fun error(){
     println("Resposta inválida")
     menu2()
 }
 
+// Função para voltar ao menu principal
 fun voltar(){
     main()
 }
 
+// Função para tratar erro no menu principal
 fun erro(){
     println("Resposta inválida")
     main()
 }
 
+// Função para calcular valor da diária e cadastrar hóspedes
 fun diaria(){
     println("Qual é o valor padrão da diária")
     var d = readln()
     while (d.toFloatOrNull() == null){
-        println("Digite somente números números, por favor")
-        d = readln()}
+        println("Digite somente números, por favor")
+        d = readln()
+    }
     var dia = d.toFloat()
     if (dia < 0){
-        println("Valor inválido, $n")
+        println("Valor inválido, $nome")
         diaria()
     }
-    println("Quantas diarias são necessarias")
+    println("Quantas diárias são necessárias")
     var da = readln()
     while(da.toIntOrNull() == null){
-        println("Digite apenas núemros")
+        println("Digite apenas números")
         da = readln()
     }
     while(da.toInt() < 0){
-        println("Valor inválido, $n")
+        println("Valor inválido, $nome")
         println("Escreva novamente.")
         da = readln()
         while(da.toIntOrNull() == null){
-            println("Digite apenas núemros")
+            println("Digite apenas números")
             da = readln()
         }
     }
     var diaa = da.toInt()
     var n1 = ""
     var listh = mutableListOf<String>()
-    var pe : Int = 0
-    var pv: Int = 0
-    var ma = 0
-    var mai = ""
+    var hinteira : Int = 0 // Contador de hóspedes pagantes
+    var hmeia: Int = 0 // Contador de hóspedes meia
+    var primeiroh = 0 // Controle do primeiro hóspede
+    var primeirohnome = "" // Nome do primeiro hóspede
+    // Cadastro de hóspedes
     while(true){
-        println("Qual é o nome do hospede")
+        println("Qual é o nome do hóspede")
         n1 = readln()
-        if (n1.uppercase() == "PARE"&& pe + pv != 0){
+        if (n1.uppercase() == "PARE"&& hinteira + hmeia != 0){
             break
         }
         while (n1 == ""|| n1.uppercase() == "PARE"){
             println("Escreva um nome")
             n1 = readln()
         }
-
-        println("Qual é a idade do hospede")
+        println("Qual é a idade do hóspede")
         var i = readln().toIntOrNull()
         while(i == null || i < 0){
-            println("Qual é a idade do hospede")
-            var i = readln().toIntOrNull()
+            println("Qual é a idade do hóspede")
+            i = readln().toIntOrNull()
         }
         listh.add(n1)
         if (6 <= i && 60 > i){
-            if (ma == 0){
-                mai = n1
-                ma++
+            if (primeiroh == 0){
+                primeirohnome = n1
+                primeiroh++
             }
             println("$n1 cadastrado(a) com sucesso")
-            pe ++
+            hinteira ++
         } else if (i < 6){
             println("$n1 cadastrado(a) com sucesso. $n1 possui gratuidade")
         }else{
-            if (ma == 0){
-                mai = n1
-                ma++
+            if (primeiroh == 0){
+                primeirohnome = n1
+                primeiroh++
             }
             println("$n1 cadastrado(a) com sucesso. $n1 paga meia")
-            pv++
+            hmeia++
         }
     }
-    println("O valor de $da dias de hospedagem é de R$${diaa*((dia*pe)+(pv* dia)/2)}")
+    // Cálculo do valor total da hospedagem
+    println("O valor de $da dias de hospedagem é de R$${diaa*((dia*hinteira)+(hmeia* dia)/2)}")
     quarto()
-    while (qua.indexOf(res) < 0){
+    while (quartos.indexOf(reserva) < 0){
         println("Quarto ocupado")
         quarto()
     }
     println("Quarto livre")
-
-    print("$n, você confirma a hospedagem para ")
+    print("$nome, você confirma a hospedagem para ")
     var conn = 0
     for (x in listh){
         conn++
@@ -171,21 +184,21 @@ fun diaria(){
             print("$x, ")
         }
     }
-    println(" por $diaa dias para o quarto $res por R$${diaa * ((dia * pe) + (pv * dia) / 2)}? (S/N)")
+    println(" por $diaa dias para o quarto $reserva por R$${diaa * ((dia * hinteira) + (hmeia * dia) / 2)}? (S/N)")
     var conf = readln()
     while(conf.uppercase() != "S" && conf.uppercase() != "N"){
         println("Resposta inválida, responda novamente: (S/N)")
         conf = readln()
     }
     if (conf.uppercase() == "S"){
-        println("$n, Reserva efetuada por ${mai}")
-        qua.remove(res)
+        println("$nome, Reserva efetuada por ${primeirohnome}")
+        quartos.remove(reserva)
     }else if (conf.uppercase() == "N"){
         println("Reserva cancelada")
         main()
     }
     for (x in 1..20){
-        if (qua.indexOf(x) < 0){
+        if (quartos.indexOf(x) < 0){
             println("$x - O quarto está ocupado")
         }else {
             println("$x - O quarto está livre")
@@ -194,14 +207,18 @@ fun diaria(){
     main()
 }
 
-fun quarto(){    println("Qual o quarto para reserva? (1-20)?")
+// Função para escolher o quarto
+fun quarto(){
+    println("Qual o quarto para reserva? (1-20)?")
     var re = readln()
     while(re.toIntOrNull() == null){
         println("Escreva apenas números, por favor")
+        re = readln()
     }
-    res = ve(re)
+    reserva = ve(re)
 }
 
+// Função para validar número do quarto
 fun ve(a:String): Int {
     var  v = a
     while (v.toIntOrNull() == null){
@@ -215,26 +232,28 @@ fun ve(a:String): Int {
             println("Escreva apenas números, por favor")
             v = readln()
         }
-        }
-
+    }
     var ai = v.toInt()
     return(ai)
 }
 
+// Função para cadastrar hóspedes
 fun cadas(){
-    if (hosp.size < 15){
-    println("Qual o nome do Hóspede? ")
-    var n2 = readln()
-    while (n2 == ""){
-        println("Escreva alguma coisa")
-        n2 = readln()
+    if (hospedes.size < 15){
+        println("Qual o nome do Hóspede? ")
+        var n2 = readln()
+        while (n2 == ""){
+            println("Escreva alguma coisa")
+            n2 = readln()
         }
-    hosp.add(n2)}else{
+        hospedes.add(n2)
+    }else{
         println("Máximo de cadastro atingido")
     }
     menu2()
 }
 
+// Função para pesquisar hóspedes
 fun pesq(){
     println("Qual o nome do Hóspede")
     var n2 = readln()
@@ -242,7 +261,7 @@ fun pesq(){
         println("Escreva alguma coisa")
         n2 = readln()
     }
-    if (hosp.indexOf(n2) < 0){
+    if (hospedes.indexOf(n2) < 0){
         println("Hóspede $n2 não foi encontrado(a)")
     }else{
         println("Hóspede $n2 foi encontrado(a)")
@@ -250,18 +269,21 @@ fun pesq(){
     menu2()
 }
 
+// Função para listar hóspedes
 fun listar(){
     var con = 0
-    if (hosp.size > 0){
-        for (x in hosp){
+    if (hospedes.size > 0){
+        for (x in hospedes){
             con++
             println("$con. Hóspede $x")
-        }}else{
-            println("Não tem nenhum Hóspede cadastrado")
+        }
+    }else{
+        println("Não tem nenhum Hóspede cadastrado")
     }
     menu2()
 }
 
+// Função para reservar evento
 fun evento(){
     println("Qual é o número de convidados para o seu evento?")
     var conv = readln().toIntOrNull()
@@ -381,16 +403,17 @@ fun evento(){
         resp = readln()
     }
     if (resp == "S"){
-        println("$n, Reserva efetuada com sucesso")
+        println("$nome, Reserva efetuada com sucesso")
         main()
     }else{
-        println("$n, Reserva não efetuada")
+        println("$nome, Reserva não efetuada")
         main()
     }
 
 
 }
 
+// Função para abastecimento
 fun abastecimento(){
     println("Qual o valor do álcool no posto Wayne Oil")
     var pa = readln().toFloatOrNull()
@@ -445,21 +468,22 @@ fun abastecimento(){
 
     if (pgi*0.7 >= pai){
         if (paim != "Tanto faz"){
-            println("$n, é mais barato abastecer com álcool no posto $paim")
+            println("$nome, é mais barato abastecer com álcool no posto $paim")
         }else{
-            println("$n, é mais barato abastecer com álcool em qualquer posto (O preço é igual)")
+            println("$nome, é mais barato abastecer com álcool em qualquer posto (O preço é igual)")
         }
     }else{
         if (pgim != "Tanto faz"){
-            println("$n, é mais barato abastecer com gasolina no posto $pgim")
+            println("$nome, é mais barato abastecer com gasolina no posto $pgim")
         }else{
-            println("$n, é mais barato abastecer com gasolina em qualquer posto (O preço é igual)")
+            println("$nome, é mais barato abastecer com gasolina em qualquer posto (O preço é igual)")
         }
 
     }
     main()
 }
 
+// Função para ar-condicionado
 fun air(){
     var realval: Float = 0.0.toFloat()
     var compval = 0.0.toFloat()
@@ -489,7 +513,7 @@ fun air(){
             con++
         }
         proc(emp, vvalap, vquap, vpordes, vminiap, realval)
-        println("Deseja informar novos dados, $n? (S/N)")
+        println("Deseja informar novos dados, $nome? (S/N)")
         var resp = readln(); var vresp = vsn(resp)
         if(vresp == "N"){
             break
