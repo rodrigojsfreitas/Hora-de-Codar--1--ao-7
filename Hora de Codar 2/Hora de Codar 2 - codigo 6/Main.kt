@@ -1,3 +1,44 @@
+/*
+Elementos usados neste arquivo Kotlin:
+
+fun main():
+    - fun: palavra-chave que define uma função.
+    - main: nome da função principal, ponto de entrada do programa.
+    - (): indica que a função não recebe parâmetros.
+
+println(...):
+    - println: função que exibe uma mensagem no console e pula para a próxima linha.
+    - "texto": texto (String) exibido ao usuário.
+
+var numero1 = readLine()!!.toInt():
+    - var: inicia uma variável mutável.
+    - numero1: nome da variável.
+    - =: operador de atribuição, define o valor inicial da variável.
+    - readLine(): lê uma linha digitada pelo usuário no console.
+    - !!: operador que garante que o valor não é nulo.
+    - toInt(): converte o texto lido para inteiro.
+
+var maior = numero1:
+    - var: inicia uma variável mutável.
+    - maior: nome da variável que guarda o maior valor informado.
+    - =: atribui o valor inicial da variável.
+    - numero1: valor inicial, vindo da primeira entrada do usuário.
+
+if (maior < numero2):
+    - if: estrutura condicional, executa um bloco se a condição for verdadeira.
+    - (maior < numero2): condição booleana.
+    - <: operador relacional "menor que".
+    - { }: bloco de código executado se a condição for verdadeira.
+    - maior = numero2: atualiza o valor da variável maior.
+
+Interpolação de string ($numero1, $numero4, $maior):
+    - $variavel: insere o valor da variável dentro do texto exibido.
+*/
+
+// Faça um programa que receba quatro valores informados pelo usuário,
+// mas informe somente o primeiro, o último e o maior de todos eles
+// (considere que todos os números informados serão diferentes)
+
 // Função principal do programa Kotlin. Todo programa começa por aqui.
 fun main() {
     // Solicita ao usuário o primeiro número e converte a entrada para inteiro

@@ -1,5 +1,30 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+/*
+Elementos usados neste arquivo Kotlin:
+
+- fun: inicia a declaração de uma função.
+- main: nome da função principal, ponto de entrada do programa.
+- (): parênteses que delimitam os parâmetros da função (vazio neste caso).
+- { }: delimitam o bloco de código da função.
+- println: função que imprime texto no console.
+- "texto": string literal, texto exibido ao usuário.
+- var: declara uma variável mutável.
+- numero1: nome da variável.
+- =: operador de atribuição, define o valor da variável.
+- readLine(): lê uma linha digitada pelo usuário (retorna String?).
+- !!: operador que garante que o valor não é nulo.
+- toInt(): converte a String para inteiro.
+- if: estrutura condicional, executa um bloco se a condição for verdadeira.
+- else if: verifica nova condição se a anterior for falsa.
+- else: executa um bloco se nenhuma condição anterior for verdadeira.
+- >: operador relacional "maior que".
+- <: operador relacional "menor que".
+- 0: valor inteiro usado na comparação.
+*/
+
+// Faça um programa para ler 3 valores
+// (considere que não serão informados valores iguais)
+// e escrever o maior deles
+
 // Função principal do programa Kotlin. Todo programa começa por aqui.
 fun main() {
     // Solicita ao usuário que digite um número

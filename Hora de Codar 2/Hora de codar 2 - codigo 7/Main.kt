@@ -1,3 +1,44 @@
+/*
+Elementos usados neste arquivo Kotlin:
+
+fun main():
+    - fun: palavra-chave que define uma função.
+    - main: nome da função principal, ponto de entrada do programa.
+    - (): indica que a função não recebe parâmetros.
+
+println(...):
+    - println: função que exibe uma mensagem no console e pula para a próxima linha.
+    - "texto": texto (String) exibido ao usuário.
+
+var soma = 0:
+    - var: inicia uma variável mutável.
+    - soma: nome da variável.
+    - =: operador de atribuição, define o valor inicial da variável.
+    - 0: valor inicial da variável.
+
+var numeroX = readLine()!!.toInt():
+    - var: inicia uma variável mutável.
+    - numeroX: nome da variável (numero1, numero2, ...).
+    - =: operador de atribuição.
+    - readLine(): lê uma linha digitada pelo usuário no console.
+    - !!: operador que garante que o valor não é nulo.
+    - toInt(): converte o texto lido para inteiro.
+
+if (numeroX < 72):
+    - if: estrutura condicional, executa um bloco se a condição for verdadeira.
+    - (numeroX < 72): condição booleana.
+    - <: operador relacional "menor que".
+    - soma += numeroX: soma o valor à variável soma.
+    - +=: operador de atribuição composto (soma e atribui).
+
+Interpolação de string ($numero1, $soma):
+    - $variavel: insere o valor da variável dentro do texto exibido.
+*/
+
+// Faça um programa que leia 6 números que o usuário vai informar.
+// Todos os números lidos com valor inferior a 72 devem ser somados.
+// Escreva o valor final da soma efetuada e também todos valores que o usuário informou.
+
 // Função principal do programa Kotlin. Todo programa começa por aqui.
 fun main() {
     // Inicializa a variável soma com zero

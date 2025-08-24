@@ -1,3 +1,96 @@
+/*
+Elementos usados neste arquivo Kotlin:
+
+fun main():
+  - fun: palavra‑chave que define uma função.
+  - main: nome da função principal, ponto de entrada do programa.
+  - (): não recebe parâmetros.
+
+val / var:
+  - val: declara variável imutável (somente leitura depois de atribuída).
+  - var: declara variável mutável (pode mudar de valor).
+
+Tipos inferidos / explícitos:
+  - Kotlin infere tipos (ex: var nome = "João"). Também podemos anotar (ex: var nome: String = "").
+
+Strings e interpolação:
+  - "texto" define literais de String.
+  - $variavel insere o valor da variável na String.
+  - ${expressao} avalia a expressão e insere o resultado.
+
+Listas mutáveis / imutáveis:
+  - mutableListOf<T>() cria lista mutável (add, remove, etc.).
+  - listOf<T>() cria lista somente leitura.
+  - .add(valor), .remove(valor), .removeAt(indice), .indexOf(valor), .size, .forEach { } são operações de coleção.
+
+Loops:
+  - for (x in 1..20): laço sobre intervalo fechado (inclui 20).
+  - for (x in lista): iteração sobre elementos da lista.
+  - while (condicao) { ... }: repete enquanto condição for verdadeira.
+  - while(true): laço infinito controlado por break.
+
+Controle de fluxo:
+  - if / else if / else: decisões condicionais.
+  - when (valor) { "1" -> ... else -> ... }: seleção múltipla (similar a switch).
+  - break: sai imediatamente do laço atual.
+  - return: (não usado diretamente aqui exceto implicitamente em funções que retornam valor) encerra função retornando valor.
+
+Operadores relacionais:
+  - == (igual), != (diferente), > (maior), < (menor), >= (maior ou igual), <= (menor ou igual).
+
+Operadores lógicos:
+  - && (E lógico), || (OU lógico), ! (negação – usado indiretamente em comparações compostas).
+
+Operadores aritméticos:
+  - + adição, - subtração, * multiplicação, / divisão, % resto (usado na verificação g % 1 == 0.0).
+
+Conversões e validação numérica:
+  - readln(): lê uma linha do console (String).
+  - toIntOrNull(), toFloatOrNull(): convertem String para Int/Float ou retornam null se inválido.
+  - uppercase(): converte String para MAIÚSCULAS (facilita comparação sem case sensitive).
+
+Formatação numérica:
+  - String.format("%.2f", numero): formata número com 2 casas decimais.
+
+Funções utilitárias definidas no arquivo:
+  - sair(): encerra fluxo exibindo mensagem.
+  - menu(), menu2(): exibem menus e direcionam escolhas.
+  - diaria(): calcula custo de hospedagem aplicando regras de gratuidade / meia.
+  - quarto(): captura número de quarto e valida.
+  - ve(a: String): valida e converte String para Int dentro de faixa (1..20).
+  - cadas(): cadastra hóspede em lista global (limite 15).
+  - pesq(): busca hóspede pelo nome.
+  - listar(): lista hóspedes cadastrados.
+  - evento(): calcula e reserva auditório conforme número de convidados, agenda, custos (garçons + buffet).
+  - abastecimento(): compara preços de combustíveis entre dois postos.
+  - air(): compara orçamentos de instalação de ar-condicionado com desconto condicional.
+  - proc(): registra orçamento (empresa e dados) em lista aremp.
+  - veint(), vefloat(), vefloatcent(): validam e convertem valores numéricos específicos (inteiros, floats, percentuais).
+  - vsn(): valida resposta Sim/Não.
+
+Estruturas de dados auxiliares:
+  - hospedes: MutableList<String> para nomes.
+  - quartos: MutableList<Int> com números de quartos disponíveis.
+  - aremp: MutableList<List<String>> armazena detalhes de orçamentos de empresas.
+
+Tratamento de entradas:
+  - Loops while com toIntOrNull() / toFloatOrNull() para insistir até receber valor válido.
+  - Comparações de String usando uppercase() para ignorar diferenças de maiúsculas/minúsculas.
+
+Cálculos específicos:
+  - Hospedagem: valor total = dias * ((diária * inteiros) + (meias * diária)/2).
+  - Evento: garçons = ceil(convidados / 12). Custos de componentes somados e formatados.
+  - Abastecimento: regra econômica compara (gasolina * 0.7) com preço do álcool.
+  - Ar-condicionado: aplica desconto somente se quantidade >= mínima: total = (valor * quantidade)*(1 - desconto).
+
+Boas práticas ilustradas:
+  - Validação de entrada antes de usar valores numéricos.
+  - Separação de responsabilidades em funções menores.
+  - Uso de listas para estado global simples.
+*/
+
+// A tarefa é muito grande, então confira as perguntas no perguntas-7.md
+
 // Hotel Nakatomi Plaza
 // Declaração de variáveis globais
 val hotel = "Nakatomi Plaza" // Nome do hotel

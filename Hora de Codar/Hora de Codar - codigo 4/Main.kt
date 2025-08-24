@@ -46,6 +46,14 @@ ${...}:
 // cada uma de suas respectivas áreas.
 // O usuário irá informar os valores de cada variável.
 
+// Retangulo: A = base * altura
+// Quadrado: A = lado * lado = lado^2
+// Losango: A = (diagonal maior * diagonal menor) / 2
+// Trapézio: A = ((base maior + base menor) * altura) / 2
+// Paralelogramo: A = base * altura
+// Triângulo: A = (base * altura) / 2
+// Círculo: A = π * raio^2 (use π = 3.14159)
+
 // Função principal do programa Kotlin. Todo programa começa por aqui.
 fun main() {
     // Exibe o menu de opções para o usuário escolher qual área deseja calcular
