@@ -11,7 +11,8 @@
 ---
 
 ### 1
-<video src="/Preview/Hora_de_Codar/Horadecodar-1.mp4" controls width="400"></video>
+<img src="../Preview/Hora_de_Codar/gif/Horadecodar-1.gif" ></img>
+<video src="../Preview/Hora_de_Codar/Horadecodar-1.mp4" controls video = 1400></video>
 <br>
  Escreva um programa que crie uma variável chamada "nome_do_carro" e atribua-a um valor "Fusca". Exiba-a ao usuário.
 
