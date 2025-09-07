@@ -16,6 +16,14 @@ fun main() {
 }
 ```
 
+E são divididos em 7 partes, indo de códigos bem básicos a alguns mais complexos.
+
+### Hora de Codar 1
+
+<img src="./Preview/Hora_de_Codar/gif/Horadecodar-4.gif" ></img>
+
+Exercícios bem simples para ver comandos básicos, como mostrar seu nome e sua idade no terminal, somente ficam um pouco mais complexos na última atividade, onde somos desafiados a fazer algumas fórmulas matemáticas.
+
 <table>
   <tr>
     <th>Exercício</th>
