@@ -41,7 +41,7 @@ Escreva um programa em que o usuário informe o seu nome e em seguida o programa
 ### 4
 <a href="../Preview/Hora_de_Codar/readmes/Hora-de-Codar.md">
 <img src="../Preview/Hora_de_Codar/gif/Horadecodar-4.gif" ></img>
-</æ>
+</a>
 <br>
 Considerando a figura abaixo, escreva um programa para cada forma que calcule e exiba em tela cada uma de suas respectivas áreas. O usuário irá informar os valores de cada variável.
 
